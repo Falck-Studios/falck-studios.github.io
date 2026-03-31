@@ -49,9 +49,28 @@
 </head>
 <body>
 
-  <header>
-    <nav class="container">
-      <!-- Navigation will be added in a separate issue -->
+  <header class="site-header" id="site-header">
+    <nav class="container nav" aria-label="Hovednavigasjon">
+      <a href="#" class="nav__logo">Falck Studios</a>
+
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+        aria-label="Åpne meny"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#om-oss" class="nav__link">Om Oss</a></li>
+        <li><a href="#tjenester" class="nav__link">Tjenester</a></li>
+        <li><a href="#prosjekter" class="nav__link">Prosjekter</a></li>
+        <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -81,7 +100,7 @@
               <p>Webapper, verktøy, automatisering</p>
             </div>
             <div class="service-card">
-              <span class="service-icon">🎮</span>
+              <span class="service-icon">��</span>
               <h3>Kreative prosjekter</h3>
               <p>Spill, digitale produkter, innovative løsninger</p>
             </div>
