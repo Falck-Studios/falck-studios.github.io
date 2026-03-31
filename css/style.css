@@ -1,6 +1,4 @@
-/* ==========================================================================
    Design System — CSS Custom Properties
-   ========================================================================== */
 
 :root {
   /* Color palette (dark theme) */
@@ -34,9 +32,7 @@
   }
 }
 
-/* ==========================================================================
    CSS Reset / Normalize
-   ========================================================================== */
 
 *,
 *::before,
@@ -91,9 +87,7 @@ ol {
   list-style: none;
 }
 
-/* ==========================================================================
    Base Typography
-   ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
@@ -111,9 +105,7 @@ p {
   margin-bottom: var(--spacing-md);
 }
 
-/* ==========================================================================
    Layout
-   ========================================================================== */
 
 .container {
   width: 100%;
@@ -122,9 +114,7 @@ p {
   padding-inline: var(--spacing-md);
 }
 
-/* ==========================================================================
    Navigation
-   ========================================================================== */
 
 .site-header {
   position: fixed;
@@ -249,9 +239,7 @@ main {
   padding-top: 4rem;
 }
 
-/* ==========================================================================
    Responsive Breakpoints (mobile-first)
-   ========================================================================== */
 
 /* Small devices (480px and up) */
 @media (min-width: 480px) {
@@ -352,16 +340,100 @@ main {
 }
 
 /* ==========================================================================
+   Om Oss (About) Section
+   ========================================================================== */
+
+.om-oss {
+  padding-block: var(--spacing-xl);
+}
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.section-heading::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background-color: var(--color-accent);
+  margin-top: var(--spacing-sm);
+  border-radius: 2px;
+}
+
+.om-oss__intro {
+  max-width: 720px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.om-oss__lead {
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.om-oss__values {
+  margin-top: var(--spacing-lg);
+}
+
+.om-oss__values-heading {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.om-oss__values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+.value-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  transition: border-color 0.2s ease;
+}
+
+.value-card:hover {
+  border-color: var(--color-accent);
+}
+
+.value-card__icon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-card__title {
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-card__text {
+  margin-bottom: 0;
+}
+
+@media (min-width: 600px) {
+  .om-oss__values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .om-oss__values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
    Services Section
    ========================================================================== */
 
 .services {
   padding: var(--spacing-xl) 0;
-}
-
-.section-heading {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
 }
 
 .services-grid {
