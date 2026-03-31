@@ -1,0 +1,213 @@
+# AI Agent Review Workflow
+#
+# Triggers an AI review agent to review work done on an issue.
+#
+# Trigger methods:
+#   1. workflow_dispatch: Manual trigger with issue number and AI tool selection
+#   2. issues labeled: Auto-trigger when the "For Review" label is added
+#
+# Required secrets:
+#   - GH_PAT: A Personal Access Token for gh CLI (triggers cross-workflow label events)
+#   - COPILOT_GITHUB_TOKEN: For Copilot CLI authentication (can be same as GH_PAT)
+#   - ANTHROPIC_API_KEY: For Claude Code CLI authentication
+#   - OPENAI_API_KEY: For Codex CLI authentication
+#
+# Optional repository variable:
+#   - AI_TOOL: Default AI tool when triggered by label events (copilot|claude|codex)
+#
+# IMPORTANT: gh CLI must authenticate with a PAT (not GITHUB_TOKEN) so that
+# label changes (e.g. adding "For Agent Work") trigger the ai-agent-work workflow.
+
+name: AI Agent Review
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number to review'
+        required: true
+        type: number
+      ai_tool:
+        description: 'AI tool to use'
+        required: false
+        type: choice
+        options:
+          - copilot
+          - claude
+          - codex
+        default: copilot
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  agent-review:
+    name: Run AI Review Agent
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issues' && github.event.label.name == 'For Review')
+    env:
+      ISSUE_NUMBER: ${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}
+      AI_TOOL: ${{ github.event_name == 'workflow_dispatch' && inputs.ai_tool || vars.AI_TOOL || 'copilot' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+
+      # --- Authenticate gh CLI with PAT (required for cross-workflow triggers) ---
+      - name: Authenticate GitHub CLI with PAT
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.COPILOT_GITHUB_TOKEN }}
+        run: |
+          echo "$GH_PAT" | gh auth login --with-token
+
+      # --- Install selected AI tool ---
+      - name: Install Copilot CLI
+        if: env.AI_TOOL == 'copilot'
+        run: npm install -g @github/copilot
+
+      - name: Install Claude Code CLI
+        if: env.AI_TOOL == 'claude'
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Install Codex CLI
+        if: env.AI_TOOL == 'codex'
+        run: npm install -g @openai/codex
+
+      # --- Install shared CLI tools ---
+      - name: Install Playwright CLI
+        run: |
+          npm install -g @playwright/cli@latest
+          npx playwright install --with-deps chromium
+
+      - name: Install Playwright CLI skills
+        run: playwright-cli install --skills
+
+      # --- Load skills for Claude / Codex ---
+      - name: Load skills context
+        if: env.AI_TOOL != 'copilot'
+        id: skills
+        run: |
+          SKILLS_CONTEXT=""
+          for skill_dir in .github/skills/*/; do
+            if [ -f "${skill_dir}SKILL.md" ]; then
+              SKILLS_CONTEXT="${SKILLS_CONTEXT}
+          $(cat "${skill_dir}SKILL.md")
+          "
+            fi
+          done
+          {
+            echo "context<<SKILLS_EOF"
+            echo "$SKILLS_CONTEXT"
+            echo "SKILLS_EOF"
+          } >> $GITHUB_OUTPUT
+
+      # --- Run: Copilot ---
+      - name: Run Copilot Review Agent
+        if: env.AI_TOOL == 'copilot'
+        env:
+          COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.COPILOT_GITHUB_TOKEN }}
+        run: |
+          copilot -p "
+          You are a code reviewer. Review the work done for the following issue.
+
+          ## Issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}
+
+          Use the gh cli tool to interact with GitHub. 
+
+          ## Review Instructions
+
+          1. Find all pull requests and recent commits related to this issue.
+          2. Review the code changes for correctness, quality, and completeness.
+          3. Check that the changes address the issue requirements.
+          4. Verify tests exist and are adequate for the changes.
+          5. Look for potential bugs, security issues, or performance problems.
+          6. Post a review comment on any related pull requests with your findings.
+          7. Comment on the issue with a summary of your review.
+          8. If the work is satisfactory, approve the PR and note that in the issue. Then remove the 'For Review' label and close the issue.
+          9. If changes are needed, request changes on the PR and detail what needs fixing. Then label the issue 'For Agent Work' again and remove the 'For Review' label if human intervention is needed or this issue has gone back and forth more than 3 times, add a comment and add the label 'Manual Task'.
+
+          Do not forget to change the labels on the issue based on the review outcome.
+
+          " \
+            --model claude-opus-4.6 \
+            --allow-all-tools \
+            --allow-all-paths \
+            --allow-all-urls \
+            --no-ask-user \
+            --enable-all-github-mcp-tools \
+            --no-ask-user \
+            --autopilot
+
+      # --- Run: Claude ---
+      - name: Run Claude Review Agent
+        if: env.AI_TOOL == 'claude'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "
+          ${{ steps.skills.outputs.context }}
+
+          You are a code reviewer. Review the work done for the following issue.
+
+          ## Issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}
+
+          Use the gh cli tool to interact with GitHub. 
+
+          ## Review Instructions
+
+          1. Find all pull requests and recent commits related to this issue.
+          2. Review the code changes for correctness, quality, and completeness.
+          3. Check that the changes address the issue requirements.
+          4. Verify tests exist and are adequate for the changes.
+          5. Look for potential bugs, security issues, or performance problems.
+          6. Post a review comment on any related pull requests with your findings.
+          7. Comment on the issue with a summary of your review.
+          8. If the work is satisfactory, approve the PR and note that in the issue. Then remove the 'For Review' label and close the issue.
+          9. If changes are needed, request changes on the PR and detail what needs fixing. Then label the issue 'For Agent Work' again and remove the 'For Review' label if human intervention is needed or this issue has gone back and forth more than 3 times, add a comment and add the label 'Manual Task'.
+
+          Do not forget to change the labels on the issue based on the review outcome.
+          " \
+            --allowedTools 'shell' 'write' 'read'
+
+      # --- Run: Codex ---
+      - name: Run Codex Review Agent
+        if: env.AI_TOOL == 'codex'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          codex --full-auto "
+          ${{ steps.skills.outputs.context }}
+
+          You are a code reviewer. Review the work done for the following issue.
+
+          ## Issue #${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || github.event.issue.number }}
+
+          Use the gh cli tool to interact with GitHub. 
+
+          ## Review Instructions
+
+          1. Find all pull requests and recent commits related to this issue.
+          2. Review the code changes for correctness, quality, and completeness.
+          3. Check that the changes address the issue requirements.
+          4. Verify tests exist and are adequate for the changes.
+          5. Look for potential bugs, security issues, or performance problems.
+          6. Post a review comment on any related pull requests with your findings.
+          7. Comment on the issue with a summary of your review.
+          8. If the work is satisfactory, approve the PR and note that in the issue. Then remove the 'For Review' label and close the issue.
+          9. If changes are needed, request changes on the PR and detail what needs fixing. Then label the issue 'For Agent Work' again and remove the 'For Review' label if human intervention is needed or this issue has gone back and forth more than 3 times, add a comment and add the label 'Manual Task'.
+
+          Do not forget to change the labels on the issue based on the review outcome.
+          "
