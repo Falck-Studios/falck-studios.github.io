@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!isOpen));
-      toggle.setAttribute('aria-label', isOpen ? 'Åpne meny' : 'Lukk meny');
+      const lang = document.documentElement.lang || 'nb';
+      const openLabel = lang === 'en' ? 'Open menu' : 'Åpne meny';
+      const closeLabel = lang === 'en' ? 'Close menu' : 'Lukk meny';
+      toggle.setAttribute('aria-label', isOpen ? openLabel : closeLabel);
       menu.classList.toggle('nav__menu--open', !isOpen);
     });
 
@@ -30,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.querySelectorAll('.nav__link').forEach((link) => {
       link.addEventListener('click', () => {
         toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Åpne meny');
+        const lang = document.documentElement.lang || 'nb';
+        toggle.setAttribute('aria-label', lang === 'en' ? 'Open menu' : 'Åpne meny');
         menu.classList.remove('nav__menu--open');
       });
     });
