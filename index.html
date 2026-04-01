@@ -213,29 +213,64 @@
           <h2 id="kontakt-heading">Kontakt</h2>
           <p class="section-subtitle">Ta gjerne kontakt med oss — vi ser frem til å høre fra deg.</p>
 
-          <div class="contact-grid">
-            <div class="contact-card">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="contact-layout">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="contact-form__group">
+                <label for="contact-name" class="contact-form__label">Navn</label>
+                <input type="text" id="contact-name" name="name" class="contact-form__input" required autocomplete="name" placeholder="Ditt navn">
+                <span class="contact-form__error" aria-live="polite"></span>
               </div>
-              <h3>E-post</h3>
-              <a href="mailto:kontakt@falckstudios.no">kontakt@falckstudios.no</a>
-            </div>
 
-            <div class="contact-card">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <div class="contact-form__group">
+                <label for="contact-email" class="contact-form__label">E-post</label>
+                <input type="email" id="contact-email" name="email" class="contact-form__input" required autocomplete="email" placeholder="din@epost.no">
+                <span class="contact-form__error" aria-live="polite"></span>
               </div>
-              <h3>GitHub</h3>
-              <a href="https://github.com/Falck-Studios" target="_blank" rel="noopener noreferrer">Falck-Studios</a>
-            </div>
 
-            <div class="contact-card">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="contact-form__group">
+                <label for="contact-subject" class="contact-form__label">Emne</label>
+                <input type="text" id="contact-subject" name="subject" class="contact-form__input" placeholder="Hva gjelder henvendelsen?">
+                <span class="contact-form__error" aria-live="polite"></span>
               </div>
-              <h3>Lokasjon</h3>
-              <p class="contact-location">Bergen, Norge</p>
+
+              <div class="contact-form__group">
+                <label for="contact-message" class="contact-form__label">Melding</label>
+                <textarea id="contact-message" name="message" class="contact-form__input contact-form__textarea" required rows="5" placeholder="Skriv din melding her..."></textarea>
+                <span class="contact-form__error" aria-live="polite"></span>
+              </div>
+
+              <button type="submit" class="contact-form__submit">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send melding
+              </button>
+
+              <p class="contact-form__note">Meldingen åpnes i din e-postklient og sendes til kontakt@falckstudios.no.</p>
+            </form>
+
+            <div class="contact-info">
+              <div class="contact-card">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h3>E-post</h3>
+                <a href="mailto:kontakt@falckstudios.no">kontakt@falckstudios.no</a>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/Falck-Studios" target="_blank" rel="noopener noreferrer">Falck-Studios</a>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <h3>Lokasjon</h3>
+                <p class="contact-location">Bergen, Norge</p>
+              </div>
             </div>
           </div>
         </div>
