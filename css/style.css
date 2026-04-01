@@ -207,6 +207,29 @@ p {
   padding: 0;
 }
 
+/* Language toggle */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  background: var(--color-accent-glow);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+}
+
 .nav__toggle-bar {
   display: block;
   width: 100%;
@@ -260,6 +283,10 @@ p {
     padding: var(--spacing-md) var(--spacing-lg);
     font-size: 1rem;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  .lang-toggle {
+    margin: var(--spacing-md) var(--spacing-lg);
   }
 }
 
@@ -388,20 +415,42 @@ main {
   opacity: 0.8;
 }
 
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .hero__cta {
   display: inline-block;
   padding: 0.85rem 2.25rem;
-  border: 1px solid rgba(88, 166, 255, 0.4);
   border-radius: var(--radius-sm);
-  color: var(--color-accent);
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
   transition: all 0.3s ease;
-  background: transparent;
 }
 
-.hero__cta:hover {
+.hero__cta--primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border: 1px solid var(--color-accent);
+}
+
+.hero__cta--primary:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+  box-shadow: 0 4px 24px rgba(88, 166, 255, 0.25);
+}
+
+.hero__cta--secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
+
+.hero__cta--secondary:hover {
   background-color: var(--color-accent);
   color: var(--color-bg-primary);
   border-color: var(--color-accent);
@@ -866,6 +915,127 @@ main {
    Kontakt section
    ========================================================================== */
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr 300px;
+    align-items: start;
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.contact-form__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.contact-form__input {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form__input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.contact-form__input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+.contact-form__input--invalid {
+  border-color: #f85149;
+}
+
+.contact-form__input--invalid:focus {
+  box-shadow: 0 0 0 3px rgba(248, 81, 73, 0.15);
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form__error {
+  font-size: 0.8rem;
+  color: #f85149;
+  min-height: 1.2em;
+}
+
+.contact-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 0.85rem 2rem;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.contact-form__submit:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 24px rgba(88, 166, 255, 0.25);
+}
+
+.contact-form__submit:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.contact-form__submit svg {
+  display: inline-block;
+}
+
+.contact-form__note {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+  opacity: 0.7;
+}
+
+/* Contact Info Cards (sidebar) */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -972,6 +1142,53 @@ main {
   font-size: 0.875rem;
   color: var(--color-text-secondary);
   cursor: default;
+}
+
+/* ==========================================================================
+   Privacy Policy Page
+   ========================================================================== */
+
+.privacy-policy {
+  padding-top: calc(4rem + var(--spacing-2xl));
+  padding-bottom: var(--spacing-2xl);
+}
+
+.privacy-policy__title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+.privacy-policy__updated {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.privacy-policy__section {
+  margin-bottom: var(--spacing-xl);
+  max-width: 780px;
+}
+
+.privacy-policy__section h2 {
+  font-size: 1.35rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.privacy-policy__list {
+  list-style: disc;
+  padding-left: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+.privacy-policy__list li {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-base);
+}
+
+.privacy-policy__list li strong {
+  color: var(--color-text-primary);
 }
 
 @media (min-width: 768px) {
