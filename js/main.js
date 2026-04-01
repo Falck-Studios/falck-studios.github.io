@@ -89,6 +89,40 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section) => observer.observe(section));
   }
 
+  // Header background on scroll
+  const header = document.getElementById('site-header');
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle('site-header--scrolled', window.scrollY > 50);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Scroll-triggered reveal animations
+  const revealElements = document.querySelectorAll('.reveal, .reveal-stagger');
+  if (revealElements.length) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            if (el.classList.contains('reveal')) {
+              el.classList.add('reveal--visible');
+            }
+            if (el.classList.contains('reveal-stagger')) {
+              el.classList.add('reveal-stagger--visible');
+            }
+            revealObserver.unobserve(el);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -80px 0px', threshold: 0.1 }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+  }
+
   // Contact form handling
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {

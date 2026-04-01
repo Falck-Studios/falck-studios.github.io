@@ -15,6 +15,7 @@ const translations = {
     'nav.contact': 'Kontakt',
     'nav.toggleOpen': 'Åpne meny',
     'nav.toggleClose': 'Lukk meny',
+    'nav.skipLink': 'Hopp til innhold',
 
     // Hero
     'hero.tagline': 'Vi bygger fremtidens digitale løsninger',
@@ -121,6 +122,7 @@ const translations = {
     'nav.contact': 'Contact',
     'nav.toggleOpen': 'Open menu',
     'nav.toggleClose': 'Close menu',
+    'nav.skipLink': 'Skip to content',
 
     // Hero
     'hero.tagline': 'We build the digital solutions of tomorrow',
