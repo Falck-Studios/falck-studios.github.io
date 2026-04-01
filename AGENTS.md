@@ -25,6 +25,7 @@ Need an image? Create an issue defining what you'd need and assign RickardHF to 
 
 - Start the application by running `npm run dev`
 - Use the playwright skill to test the application and looking at the endresult
+- Pay extra attention to design and evaluate with current trends
 
 ## Working with issues
 
