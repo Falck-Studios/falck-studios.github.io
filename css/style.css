@@ -814,6 +814,53 @@ main {
   cursor: default;
 }
 
+/* ==========================================================================
+   Privacy Policy Page
+   ========================================================================== */
+
+.privacy-policy {
+  padding-top: calc(4rem + var(--spacing-2xl));
+  padding-bottom: var(--spacing-2xl);
+}
+
+.privacy-policy__title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-sm);
+}
+
+.privacy-policy__updated {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.privacy-policy__section {
+  margin-bottom: var(--spacing-xl);
+  max-width: 780px;
+}
+
+.privacy-policy__section h2 {
+  font-size: 1.35rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.privacy-policy__list {
+  list-style: disc;
+  padding-left: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+}
+
+.privacy-policy__list li {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-base);
+}
+
+.privacy-policy__list li strong {
+  color: var(--color-text-primary);
+}
+
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
