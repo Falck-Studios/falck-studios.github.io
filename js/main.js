@@ -36,6 +36,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Cookie consent banner
+  const cookieBanner = document.getElementById('cookie-consent');
+  const cookieAccept = document.getElementById('cookie-accept');
+  const cookieDecline = document.getElementById('cookie-decline');
+
+  if (cookieBanner && !localStorage.getItem('cookie-consent')) {
+    requestAnimationFrame(() => {
+      cookieBanner.classList.add('cookie-consent--visible');
+      cookieBanner.setAttribute('aria-hidden', 'false');
+    });
+  }
+
+  function dismissCookieBanner(choice) {
+    localStorage.setItem('cookie-consent', choice);
+    cookieBanner.classList.remove('cookie-consent--visible');
+    cookieBanner.setAttribute('aria-hidden', 'true');
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => dismissCookieBanner('accepted'));
+  }
+  if (cookieDecline) {
+    cookieDecline.addEventListener('click', () => dismissCookieBanner('declined'));
+  }
+
   // Active section highlighting on scroll
   const sections = document.querySelectorAll('main section[id]');
   const navLinks = document.querySelectorAll('.nav__link');
