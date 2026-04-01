@@ -711,6 +711,193 @@ main {
 }
 
 /* ==========================================================================
+   Blog Section
+   ========================================================================== */
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.blog-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.blog-card__date {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-card__title {
+  font-size: 1.15rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.blog-card__excerpt {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-card__read-more {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  transition: color 0.2s ease;
+}
+
+.blog-card:hover .blog-card__read-more {
+  color: var(--color-accent-hover);
+}
+
+.blog-cta {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.blog-cta__link {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.blog-cta__link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 24px rgba(88, 166, 255, 0.25);
+}
+
+/* Blog listing page */
+.blog-listing {
+  padding-block: var(--spacing-2xl);
+  min-height: 60vh;
+}
+
+.blog-listing__header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.blog-listing__title {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-listing__subtitle {
+  color: var(--color-text-secondary);
+}
+
+/* Blog article page */
+.blog-article {
+  padding-block: var(--spacing-2xl);
+  min-height: 60vh;
+}
+
+.blog-article__header {
+  max-width: 720px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.blog-article__date {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.blog-article__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-article__intro {
+  font-size: 1.1rem;
+  color: var(--color-text-primary);
+  line-height: 1.7;
+}
+
+.blog-article__content {
+  max-width: 720px;
+}
+
+.blog-article__content h2 {
+  font-size: 1.5rem;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-article__content h3 {
+  font-size: 1.25rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.blog-article__content p {
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.blog-article__content ul,
+.blog-article__content ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
+}
+
+.blog-article__content li {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.6;
+  list-style: disc;
+}
+
+.blog-article__content ol li {
+  list-style: decimal;
+}
+
+.blog-article__back {
+  display: inline-block;
+  margin-top: var(--spacing-xl);
+  font-weight: 500;
+}
+
+/* ==========================================================================
    Sections — shared
    ========================================================================== */
 
