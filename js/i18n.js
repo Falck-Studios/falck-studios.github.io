@@ -18,7 +18,8 @@ const translations = {
     // Hero
     'hero.tagline': 'Vi bygger fremtidens digitale løsninger',
     'hero.subtitle': 'AI · Software · Kreative Prosjekter',
-    'hero.cta': 'Se hva vi gjør ↓',
+    'hero.ctaPrimary': 'Ta kontakt',
+    'hero.ctaSecondary': 'Utforsk tjenester →',
 
     // About
     'about.heading': 'Om Oss',
@@ -121,7 +122,8 @@ const translations = {
     // Hero
     'hero.tagline': 'We build the digital solutions of tomorrow',
     'hero.subtitle': 'AI · Software · Creative Projects',
-    'hero.cta': 'See what we do ↓',
+    'hero.ctaPrimary': 'Get in touch',
+    'hero.ctaSecondary': 'Explore services →',
 
     // About
     'about.heading': 'About Us',
