@@ -105,6 +105,7 @@ const translations = {
     'privacy.changes.heading': 'Endringer',
     'privacy.changes.p1': 'Vi kan oppdatere denne personvernerklæringen ved behov. Eventuelle endringer vil bli publisert på denne siden med oppdatert dato.',
   },
+  en: {
     // Meta
     'meta.title': 'Falck Studios — AI, Software & Creative Solutions',
     'meta.description': 'Falck Studios delivers AI solutions, custom software, and creative digital services. We help businesses innovate and grow through technology.',
