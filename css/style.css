@@ -207,6 +207,29 @@ p {
   padding: 0;
 }
 
+/* Language toggle */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  background: var(--color-accent-glow);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle:hover {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+}
+
 .nav__toggle-bar {
   display: block;
   width: 100%;
@@ -260,6 +283,10 @@ p {
     padding: var(--spacing-md) var(--spacing-lg);
     font-size: 1rem;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  .lang-toggle {
+    margin: var(--spacing-md) var(--spacing-lg);
   }
 }
 
