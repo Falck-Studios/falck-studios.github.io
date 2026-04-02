@@ -33,9 +33,9 @@
   <!-- Google Fonts — Inter (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
@@ -83,7 +83,6 @@
         <li><a href="#om-oss" class="nav__link" data-i18n="nav.about">Om Oss</a></li>
         <li><a href="#tjenester" class="nav__link" data-i18n="nav.services">Tjenester</a></li>
         <li><a href="#prosjekter" class="nav__link" data-i18n="nav.projects">Prosjekter</a></li>
-        <li><a href="#blogg" class="nav__link" data-i18n="nav.blog">Blogg</a></li>
         <li><a href="#kontakt" class="nav__link" data-i18n="nav.contact">Kontakt</a></li>
         <li>
           <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to English">EN</button>
@@ -94,7 +93,10 @@
 
   <main>
     <section id="hero" class="hero">
-      <div class="hero__bg-grain" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--2" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--3" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
       <div class="hero__content">
         <p class="hero__kicker" data-i18n="hero.kicker">Bergen, Norge · Est. 2026</p>
         <h1 class="hero__title">
@@ -107,9 +109,6 @@
           <a href="#tjenester" class="hero__cta hero__cta--primary" data-i18n="hero.ctaPrimary">Se hva vi gjør →</a>
           <a href="https://github.com/Falck-Studios" target="_blank" rel="noopener noreferrer" class="hero__cta hero__cta--secondary">GitHub ↗</a>
         </div>
-      </div>
-      <div class="hero__scroll-hint" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
       </div>
     </section>
 
@@ -176,7 +175,7 @@
         <div class="container">
           <h2 class="section-heading reveal" data-i18n="services.heading">Hva vi gjør</h2>
           <div class="services-grid reveal-stagger">
-            <div class="service-card">
+            <div class="service-card service-card--featured">
               <div class="service-icon" aria-hidden="true">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V6a4 4 0 0 1 4-4z"/><rect x="8" y="10" width="8" height="10" rx="1"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="16" r="1"/></svg>
               </div>
@@ -209,7 +208,7 @@
           <p class="section__subtitle reveal" data-i18n="projects.subtitle">Utforsk produktene og prosjektene våre.</p>
 
           <div class="project-grid reveal-stagger">
-            <a href="https://fecht.guru" target="_blank" rel="noopener noreferrer" class="project-card project-card--wip">
+            <a href="https://fecht.guru" target="_blank" rel="noopener noreferrer" class="project-card project-card--featured project-card--wip">
               <span class="project-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
               <h3 class="project-card__name">fecht.guru</h3>
               <p class="project-card__desc" data-i18n="projects.fecht.desc">AI-assistent for historisk europeisk kampsport (HEMA).</p>
@@ -234,40 +233,6 @@
       </section>
 
       <hr class="section-divider" aria-hidden="true">
-
-      <section id="blogg" class="section blogg" aria-labelledby="blogg-heading">
-        <div class="container">
-          <h2 id="blogg-heading">Blogg</h2>
-          <p class="section-subtitle">Innsikt, veiledninger og tanker om teknologi og innovasjon.</p>
-
-          <div class="blog-grid">
-            <a href="blog/ai-transformerer-smabedrifter.html" class="blog-card">
-              <span class="blog-card__date">1. april 2026</span>
-              <h3 class="blog-card__title">Hvordan AI transformerer småbedrifter</h3>
-              <p class="blog-card__excerpt">Kunstig intelligens er ikke lenger forbeholdt store selskaper. Oppdag hvordan små og mellomstore bedrifter kan dra nytte av AI-verktøy.</p>
-              <span class="blog-card__read-more">Les mer →</span>
-            </a>
-
-            <a href="blog/velge-riktig-teknologipartner.html" class="blog-card">
-              <span class="blog-card__date">1. april 2026</span>
-              <h3 class="blog-card__title">Slik velger du riktig teknologipartner</h3>
-              <p class="blog-card__excerpt">Å finne riktig teknologipartner kan være avgjørende for suksessen til ditt digitale prosjekt. Her er hva du bør se etter.</p>
-              <span class="blog-card__read-more">Les mer →</span>
-            </a>
-
-            <a href="blog/fremtiden-for-webutvikling.html" class="blog-card">
-              <span class="blog-card__date">1. april 2026</span>
-              <h3 class="blog-card__title">Fremtiden for webutvikling i 2026</h3>
-              <p class="blog-card__excerpt">Fra AI-assistert koding til nye rammeverk — vi ser på trendene som former webutvikling i året som kommer.</p>
-              <span class="blog-card__read-more">Les mer →</span>
-            </a>
-          </div>
-
-          <div class="blog-cta">
-            <a href="blog/" class="blog-cta__link">Se alle innlegg →</a>
-          </div>
-        </div>
-      </section>
 
       <section id="kontakt" class="section kontakt" aria-labelledby="kontakt-heading">
         <div class="container">
