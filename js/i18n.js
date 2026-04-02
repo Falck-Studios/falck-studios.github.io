@@ -18,10 +18,14 @@ const translations = {
     'nav.skipLink': 'Hopp til innhold',
 
     // Hero
+    'hero.kicker': 'Bergen, Norge · Est. 2026',
+    'hero.line1': 'Vi lager',
+    'hero.line2': 'digitale verktøy',
+    'hero.line3': 'som betyr noe.',
     'hero.tagline': 'Vi bygger fremtidens digitale løsninger',
     'hero.subtitle': 'AI · Software · Kreative Prosjekter',
-    'hero.ctaPrimary': 'Ta kontakt',
-    'hero.ctaSecondary': 'Utforsk tjenester →',
+    'hero.ctaPrimary': 'Se hva vi gjør →',
+    'hero.ctaSecondary': 'Se hva vi gjør →',
 
     // About
     'about.heading': 'Om Oss',
@@ -57,9 +61,9 @@ const translations = {
 
     // Contact
     'contact.heading': 'Kontakt',
-    'contact.subtitle': 'Ta gjerne kontakt med oss — vi ser frem til å høre fra deg.',
-    'contact.email': 'E-post',
+    'contact.subtitle': 'Har du et prosjekt i tankene, eller bare vil slå av en prat? Ta kontakt via GitHub.',
     'contact.github': 'GitHub',
+    'contact.githubDesc': 'Se prosjektene våre og ta kontakt direkte.',
     'contact.location': 'Lokasjon',
     'contact.locationValue': 'Bergen, Norge',
 
@@ -103,7 +107,7 @@ const translations = {
     'privacy.rights.item3': 'Sletting: Du har rett til å kreve at personopplysninger slettes.',
     'privacy.rights.item4': 'Dataportabilitet: Du har rett til å motta dine personopplysninger i et strukturert format.',
     'privacy.rights.item5': 'Innsigelse: Du har rett til å protestere mot behandling basert på berettiget interesse.',
-    'privacy.rights.p2': 'For å utøve dine rettigheter, kontakt oss på kontakt@falckstudios.no.',
+    'privacy.rights.p2': 'For å utøve dine rettigheter, kontakt oss via GitHub.',
     'privacy.complaints.heading': 'Klager',
     'privacy.complaints.p1': 'Dersom du mener at vår behandling av personopplysninger ikke stemmer overens med det vi har beskrevet her, eller at vi på andre måter bryter personvernlovgivningen, kan du klage til Datatilsynet.',
     'privacy.changes.heading': 'Endringer',
@@ -125,10 +129,14 @@ const translations = {
     'nav.skipLink': 'Skip to content',
 
     // Hero
+    'hero.kicker': 'Bergen, Norway · Est. 2026',
+    'hero.line1': 'We build',
+    'hero.line2': 'digital tools',
+    'hero.line3': 'that matter.',
     'hero.tagline': 'We build the digital solutions of tomorrow',
     'hero.subtitle': 'AI · Software · Creative Projects',
-    'hero.ctaPrimary': 'Get in touch',
-    'hero.ctaSecondary': 'Explore services →',
+    'hero.ctaPrimary': 'See what we do →',
+    'hero.ctaSecondary': 'See what we do →',
 
     // About
     'about.heading': 'About Us',
@@ -164,9 +172,9 @@ const translations = {
 
     // Contact
     'contact.heading': 'Contact',
-    'contact.subtitle': 'Feel free to get in touch — we look forward to hearing from you.',
-    'contact.email': 'Email',
+    'contact.subtitle': 'Have a project in mind, or just want to chat? Reach out via GitHub.',
     'contact.github': 'GitHub',
+    'contact.githubDesc': 'See our projects and get in touch directly.',
     'contact.location': 'Location',
     'contact.locationValue': 'Bergen, Norway',
 
@@ -210,7 +218,7 @@ const translations = {
     'privacy.rights.item3': 'Erasure: You have the right to request that personal data be deleted.',
     'privacy.rights.item4': 'Data portability: You have the right to receive your personal data in a structured format.',
     'privacy.rights.item5': 'Objection: You have the right to object to processing based on legitimate interest.',
-    'privacy.rights.p2': 'To exercise your rights, contact us at kontakt@falckstudios.no.',
+    'privacy.rights.p2': 'To exercise your rights, contact us via GitHub.',
     'privacy.complaints.heading': 'Complaints',
     'privacy.complaints.p1': 'If you believe that our processing of personal data does not comply with what we have described here, or that we are otherwise in breach of privacy legislation, you may file a complaint with the Norwegian Data Protection Authority (Datatilsynet).',
     'privacy.changes.heading': 'Changes',

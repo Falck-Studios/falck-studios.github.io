@@ -2,17 +2,19 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Smooth scroll for CTA button
-  const cta = document.querySelector('.hero__cta');
-  if (cta) {
+  // Smooth scroll for CTA buttons
+  document.querySelectorAll('.hero__cta').forEach((cta) => {
     cta.addEventListener('click', (e) => {
-      const target = document.querySelector(cta.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+      const href = cta.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     });
-  }
+  });
 
   // Mobile menu toggle
   const toggle = document.getElementById('nav-toggle');
@@ -123,74 +125,4 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach((el) => revealObserver.observe(el));
   }
 
-  // Contact form handling
-  const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    const fields = {
-      name: contactForm.querySelector('#contact-name'),
-      email: contactForm.querySelector('#contact-email'),
-      subject: contactForm.querySelector('#contact-subject'),
-      message: contactForm.querySelector('#contact-message'),
-    };
-
-    function showError(input, message) {
-      const error = input.parentElement.querySelector('.contact-form__error');
-      input.classList.add('contact-form__input--invalid');
-      if (error) error.textContent = message;
-    }
-
-    function clearError(input) {
-      const error = input.parentElement.querySelector('.contact-form__error');
-      input.classList.remove('contact-form__input--invalid');
-      if (error) error.textContent = '';
-    }
-
-    // Clear errors on input
-    Object.values(fields).forEach((input) => {
-      if (input) input.addEventListener('input', () => clearError(input));
-    });
-
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      let valid = true;
-
-      // Validate name
-      if (!fields.name.value.trim()) {
-        showError(fields.name, 'Vennligst oppgi navnet ditt.');
-        valid = false;
-      } else {
-        clearError(fields.name);
-      }
-
-      // Validate email
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!fields.email.value.trim()) {
-        showError(fields.email, 'Vennligst oppgi e-postadressen din.');
-        valid = false;
-      } else if (!emailPattern.test(fields.email.value.trim())) {
-        showError(fields.email, 'Vennligst oppgi en gyldig e-postadresse.');
-        valid = false;
-      } else {
-        clearError(fields.email);
-      }
-
-      // Validate message
-      if (!fields.message.value.trim()) {
-        showError(fields.message, 'Vennligst skriv en melding.');
-        valid = false;
-      } else {
-        clearError(fields.message);
-      }
-
-      if (!valid) return;
-
-      // Build mailto link
-      const to = 'kontakt@falckstudios.no';
-      const subject = fields.subject.value.trim() || 'Henvendelse fra nettsiden';
-      const body = `Navn: ${fields.name.value.trim()}\nE-post: ${fields.email.value.trim()}\n\n${fields.message.value.trim()}`;
-      const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      window.location.href = mailto;
-    });
-  }
 });
