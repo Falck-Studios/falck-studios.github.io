@@ -57,10 +57,30 @@ const translations = {
     'projects.fecht.desc': 'AI-assistent for historisk europeisk kampsport (HEMA).',
     'projects.langapp.desc': 'Språklæringsapp for effektiv og engasjerende språktrening.',
     'projects.backstabber.desc': 'Kortspill og strategispill med unike mekanikker.',
+    'projects.seeAll': 'Se alle prosjekter →',
+
+    // Projects Page
+    'projectsPage.meta.title': 'Prosjekter — Falck Studios',
+    'projectsPage.meta.description': 'Utforsk alle prosjekter og produkter fra Falck Studios — AI-verktøy, apper og kreative digitale løsninger.',
+    'projectsPage.kicker': 'Produkter & Prosjekter',
+    'projectsPage.title': 'Det vi bygger',
+    'projectsPage.subtitle': 'Fra AI-verktøy til kreative spill — her er alt vi jobber med.',
+    'projectsPage.visitSite': 'Besøk nettside ↗',
+    'projectsPage.category.ai': 'AI',
+    'projectsPage.category.app': 'App',
+    'projectsPage.category.game': 'Spill',
+    'projectsPage.fecht.desc': 'AI-drevet læringsplattform for historisk europeisk kampsport (HEMA). Utforsk terminologi, teknikker og historiske kilder — med KI som din guide gjennom sverdkunsten.',
+    'projectsPage.langapp.desc': 'Språklæringsapp som gjør det enkelt og engasjerende å lære nye språk. Bygget med fokus på effektiv repetisjon og praktisk språkbruk.',
+    'projectsPage.backstabber.desc': 'Strategisk kortspill med bluffing, allianser og svik. Unike mekanikker som belønner sosial lesing og taktisk tenkning.',
+    'projectsPage.cta.heading': 'Har du en idé?',
+    'projectsPage.cta.text': 'Vi er alltid interessert i nye samarbeid og spennende prosjekter.',
+    'projectsPage.cta.email': 'Send oss en e-post →',
 
     // Contact
     'contact.heading': 'Kontakt',
-    'contact.subtitle': 'Har du et prosjekt i tankene, eller bare vil slå av en prat? Ta kontakt via GitHub.',
+    'contact.subtitle': 'Har du et prosjekt i tankene, eller bare vil slå av en prat? Vi hører gjerne fra deg.',
+    'contact.email': 'E-post',
+    'contact.emailDesc': 'Send oss en e-post direkte.',
     'contact.github': 'GitHub',
     'contact.githubDesc': 'Se prosjektene våre og ta kontakt direkte.',
     'contact.location': 'Lokasjon',
@@ -167,10 +187,30 @@ const translations = {
     'projects.fecht.desc': 'AI assistant for Historical European Martial Arts (HEMA).',
     'projects.langapp.desc': 'Language learning app for effective and engaging language training.',
     'projects.backstabber.desc': 'Card game and strategy game with unique mechanics.',
+    'projects.seeAll': 'See all projects →',
+
+    // Projects Page
+    'projectsPage.meta.title': 'Projects — Falck Studios',
+    'projectsPage.meta.description': 'Explore all projects and products from Falck Studios — AI tools, apps, and creative digital solutions.',
+    'projectsPage.kicker': 'Products & Projects',
+    'projectsPage.title': 'What we\'re building',
+    'projectsPage.subtitle': 'From AI tools to creative games — here\'s everything we\'re working on.',
+    'projectsPage.visitSite': 'Visit website ↗',
+    'projectsPage.category.ai': 'AI',
+    'projectsPage.category.app': 'App',
+    'projectsPage.category.game': 'Game',
+    'projectsPage.fecht.desc': 'AI-powered learning platform for Historical European Martial Arts (HEMA). Explore terminology, techniques, and historical sources — with AI as your guide through the art of the sword.',
+    'projectsPage.langapp.desc': 'Language learning app that makes it easy and engaging to learn new languages. Built with a focus on effective repetition and practical language use.',
+    'projectsPage.backstabber.desc': 'Strategic card game with bluffing, alliances, and betrayal. Unique mechanics that reward social reading and tactical thinking.',
+    'projectsPage.cta.heading': 'Got an idea?',
+    'projectsPage.cta.text': 'We\'re always interested in new collaborations and exciting projects.',
+    'projectsPage.cta.email': 'Send us an email →',
 
     // Contact
     'contact.heading': 'Contact',
-    'contact.subtitle': 'Have a project in mind, or just want to chat? Reach out via GitHub.',
+    'contact.subtitle': 'Have a project in mind, or just want to chat? We\'d love to hear from you.',
+    'contact.email': 'Email',
+    'contact.emailDesc': 'Send us an email directly.',
     'contact.github': 'GitHub',
     'contact.githubDesc': 'See our projects and get in touch directly.',
     'contact.location': 'Location',
@@ -239,9 +279,11 @@ function setLanguage(lang) {
   document.documentElement.lang = lang === 'nb' ? 'nb' : 'en';
 
   // Update meta tags
-  document.title = translations[lang]['meta.title'];
+  const titleKey = document.documentElement.getAttribute('data-page-title-key') || 'meta.title';
+  const descKey = document.documentElement.getAttribute('data-page-desc-key') || 'meta.description';
+  document.title = translations[lang][titleKey] || translations[lang]['meta.title'];
   const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', translations[lang]['meta.description']);
+  if (metaDesc) metaDesc.setAttribute('content', translations[lang][descKey] || translations[lang]['meta.description']);
 
   const ogTitle = document.querySelector('meta[property="og:title"]');
   if (ogTitle) ogTitle.setAttribute('content', translations[lang]['meta.title']);
