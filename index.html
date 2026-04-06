@@ -207,27 +207,69 @@
           <h2 id="prosjekter-heading" class="section__title reveal" data-i18n="projects.heading">Prosjekter</h2>
           <p class="section__subtitle reveal" data-i18n="projects.subtitle">Utforsk produktene og prosjektene våre.</p>
 
-          <div class="project-grid reveal-stagger">
-            <a href="https://fecht.guru" target="_blank" rel="noopener noreferrer" class="project-card project-card--featured project-card--wip">
-              <span class="project-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
-              <h3 class="project-card__name">fecht.guru</h3>
-              <p class="project-card__desc" data-i18n="projects.fecht.desc">AI-assistent for historisk europeisk kampsport (HEMA).</p>
-              <span class="project-card__link" data-i18n="projects.visitHomepage">Besøk hjemmeside →</span>
+          <div class="project-grid-v2 reveal-stagger">
+
+            <!-- fecht.guru — featured with screenshot -->
+            <a href="https://fecht.guru" target="_blank" rel="noopener noreferrer" class="proj-card proj-card--hero">
+              <div class="proj-card__img">
+                <img src="images/fecht-guru-preview.png" alt="fecht.guru" loading="lazy" width="1280" height="720">
+                <div class="proj-card__img-overlay">
+                  <span class="proj-card__visit" data-i18n="projects.visitHomepage">Besøk hjemmeside →</span>
+                </div>
+              </div>
+              <div class="proj-card__body">
+                <div class="proj-card__meta">
+                  <span class="proj-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
+                  <span class="proj-card__cat">AI</span>
+                </div>
+                <h3 class="proj-card__name">fecht.guru</h3>
+                <p class="proj-card__desc" data-i18n="projects.fecht.desc">AI-assistent for historisk europeisk kampsport (HEMA).</p>
+                <div class="proj-card__tags">
+                  <span>AI / LLM</span>
+                  <span>HEMA</span>
+                  <span>Web App</span>
+                </div>
+              </div>
             </a>
 
-            <div class="project-card project-card--wip">
-              <span class="project-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
-              <h3 class="project-card__name">LangApp</h3>
-              <p class="project-card__desc" data-i18n="projects.langapp.desc">Språklæringsapp for effektiv og engasjerende språktrening.</p>
-              <span class="project-card__status" data-i18n="projects.status.soon">Kommer snart</span>
+            <!-- LangApp -->
+            <div class="proj-card proj-card--side">
+              <div class="proj-card__icon proj-card__icon--indigo" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div class="proj-card__meta">
+                <span class="proj-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
+                <span class="proj-card__cat proj-card__cat--indigo" data-i18n="projectsPage.category.app">App</span>
+              </div>
+              <h3 class="proj-card__name">LangApp</h3>
+              <p class="proj-card__desc" data-i18n="projects.langapp.desc">Språklæringsapp for effektiv og engasjerende språktrening.</p>
+              <div class="proj-card__tags">
+                <span data-i18n="projectsPage.tag.language">Språk</span>
+                <span data-i18n="projectsPage.tag.mobile">Mobil</span>
+                <span data-i18n="projectsPage.tag.education">Utdanning</span>
+              </div>
+              <span class="proj-card__status" data-i18n="projects.status.soon">Kommer snart</span>
             </div>
 
-            <div class="project-card project-card--wip">
-              <span class="project-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
-              <h3 class="project-card__name">Backstabber</h3>
-              <p class="project-card__desc" data-i18n="projects.backstabber.desc">Kortspill og strategispill med unike mekanikker.</p>
-              <span class="project-card__status" data-i18n="projects.status.soon">Kommer snart</span>
+            <!-- Backstabber -->
+            <div class="proj-card proj-card--side">
+              <div class="proj-card__icon proj-card__icon--warm" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg>
+              </div>
+              <div class="proj-card__meta">
+                <span class="proj-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
+                <span class="proj-card__cat proj-card__cat--warm" data-i18n="projectsPage.category.game">Spill</span>
+              </div>
+              <h3 class="proj-card__name">Backstabber</h3>
+              <p class="proj-card__desc" data-i18n="projects.backstabber.desc">Kortspill og strategispill med unike mekanikker.</p>
+              <div class="proj-card__tags">
+                <span data-i18n="projectsPage.tag.cardgame">Kortspill</span>
+                <span data-i18n="projectsPage.tag.strategy">Strategi</span>
+                <span>Multiplayer</span>
+              </div>
+              <span class="proj-card__status" data-i18n="projects.status.soon">Kommer snart</span>
             </div>
+
           </div>
 
           <div class="projects-see-all reveal">

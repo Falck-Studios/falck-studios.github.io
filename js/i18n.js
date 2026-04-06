@@ -75,6 +75,11 @@ const translations = {
     'projectsPage.cta.heading': 'Har du en idé?',
     'projectsPage.cta.text': 'Vi er alltid interessert i nye samarbeid og spennende prosjekter.',
     'projectsPage.cta.email': 'Send oss en e-post →',
+    'projectsPage.tag.language': 'Språk',
+    'projectsPage.tag.mobile': 'Mobil',
+    'projectsPage.tag.education': 'Utdanning',
+    'projectsPage.tag.cardgame': 'Kortspill',
+    'projectsPage.tag.strategy': 'Strategi',
 
     // Contact
     'contact.heading': 'Kontakt',
@@ -205,6 +210,11 @@ const translations = {
     'projectsPage.cta.heading': 'Got an idea?',
     'projectsPage.cta.text': 'We\'re always interested in new collaborations and exciting projects.',
     'projectsPage.cta.email': 'Send us an email →',
+    'projectsPage.tag.language': 'Language',
+    'projectsPage.tag.mobile': 'Mobile',
+    'projectsPage.tag.education': 'Education',
+    'projectsPage.tag.cardgame': 'Card Game',
+    'projectsPage.tag.strategy': 'Strategy',
 
     // Contact
     'contact.heading': 'Contact',
