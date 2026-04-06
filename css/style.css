@@ -1023,12 +1023,16 @@ main {
   opacity: 0.6;
 }
 
-.proj-card--side:first-of-type::before {
+.proj-card--side:nth-of-type(2)::before {
   background: linear-gradient(90deg, var(--color-accent-2), transparent 70%);
 }
 
-.proj-card--side:last-child::before {
+.proj-card--side:nth-of-type(3)::before {
   background: linear-gradient(90deg, var(--color-warm), transparent 70%);
+}
+
+.proj-card--side:nth-of-type(4)::before {
+  background: linear-gradient(90deg, var(--color-accent), transparent 70%);
 }
 
 .proj-card__icon {
@@ -1054,6 +1058,11 @@ main {
 .proj-card__icon--warm {
   background: var(--color-warm-glow);
   color: var(--color-warm);
+}
+
+.proj-card__icon--teal {
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
 }
 
 .proj-card__status {
@@ -1272,6 +1281,8 @@ main {
 .reveal-stagger--visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0s; }
 .reveal-stagger--visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
 .reveal-stagger--visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.24s; }
+.reveal-stagger--visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.36s; }
+.reveal-stagger--visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.48s; }
 
 /* ==========================================================================
    Cookie Consent Banner
@@ -1693,6 +1704,11 @@ main {
   color: var(--color-warm);
 }
 
+.project-detail-card__icon--teal {
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+}
+
 .project-detail-card__content {
   flex: 1;
 }
@@ -1770,6 +1786,41 @@ main {
   gap: var(--spacing-md);
   flex-wrap: wrap;
   justify-content: center;
+}
+
+/* ==========================================================================
+   Site Disclaimer Banner
+   ========================================================================== */
+
+.site-disclaimer {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(232, 166, 80, 0.08);
+  border-bottom: 1px solid rgba(232, 166, 80, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-disclaimer__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-warm);
+  margin-bottom: 0;
+  padding: 0.5rem 0;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.site-disclaimer__icon {
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* ==========================================================================

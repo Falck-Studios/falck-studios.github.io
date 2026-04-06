@@ -55,8 +55,9 @@ const translations = {
     'projects.status.soon': 'Kommer snart',
     'projects.visitHomepage': 'Besøk hjemmeside →',
     'projects.fecht.desc': 'AI-assistent for historisk europeisk kampsport (HEMA).',
-    'projects.langapp.desc': 'Språklæringsapp for effektiv og engasjerende språktrening.',
-    'projects.backstabber.desc': 'Kortspill og strategispill med unike mekanikker.',
+    'projects.some.desc': 'Slutt å scrolle — snakk med sosiale medier i stedet. AI-drevet assistent som oppsummerer feedene dine.',
+    'projects.cardswap.desc': 'Finn samlere i nærheten og bytt kort lokalt. Markedsplass for Pokémon og andre samlekortspill.',
+    'projects.fieldlog.desc': 'Dokumenter feltarbeid med stemmen. Ta opp, ta bilder, og få AI-genererte rapporter automatisk.',
     'projects.seeAll': 'Se alle prosjekter →',
 
     // Projects Page
@@ -64,22 +65,21 @@ const translations = {
     'projectsPage.meta.description': 'Utforsk alle prosjekter og produkter fra Falck Studios — AI-verktøy, apper og kreative digitale løsninger.',
     'projectsPage.kicker': 'Produkter & Prosjekter',
     'projectsPage.title': 'Det vi bygger',
-    'projectsPage.subtitle': 'Fra AI-verktøy til kreative spill — her er alt vi jobber med.',
+    'projectsPage.subtitle': 'Fra AI-verktøy til kreative apper — her er alt vi jobber med.',
     'projectsPage.visitSite': 'Besøk nettside ↗',
     'projectsPage.category.ai': 'AI',
     'projectsPage.category.app': 'App',
-    'projectsPage.category.game': 'Spill',
     'projectsPage.fecht.desc': 'AI-drevet læringsplattform for historisk europeisk kampsport (HEMA). Utforsk terminologi, teknikker og historiske kilder — med KI som din guide gjennom sverdkunsten.',
-    'projectsPage.langapp.desc': 'Språklæringsapp som gjør det enkelt og engasjerende å lære nye språk. Bygget med fokus på effektiv repetisjon og praktisk språkbruk.',
-    'projectsPage.backstabber.desc': 'Strategisk kortspill med bluffing, allianser og svik. Unike mekanikker som belønner sosial lesing og taktisk tenkning.',
+    'projectsPage.some.desc': 'Hva om du kunne spørre én AI hva som skjer i sosiale medier — i stedet for å scrolle i timevis? AI SoMe Wrapper oppsummerer feedene dine på tvers av plattformer, slik at du holder deg oppdatert uten å miste tid.',
+    'projectsPage.cardswap.desc': 'Samler du Pokémon-kort? CardSwap kobler deg med andre samlere i nærområdet for trygge bytter ansikt til ansikt. Kart, chat og omdømmesystem — alt du trenger for å finne akkurat det kortet du leter etter.',
+    'projectsPage.fieldlog.desc': 'For deg som jobber i felt og trenger dokumentasjon uten å stoppe opp. Snakk inn hva du gjør, knips et bilde, og la AI-en generere rapporten. Fungerer offline — synkroniserer når du er tilbake på nett.',
     'projectsPage.cta.heading': 'Har du en idé?',
     'projectsPage.cta.text': 'Vi er alltid interessert i nye samarbeid og spennende prosjekter.',
     'projectsPage.cta.email': 'Send oss en e-post →',
-    'projectsPage.tag.language': 'Språk',
+    'projectsPage.tag.voice': 'Stemme',
     'projectsPage.tag.mobile': 'Mobil',
-    'projectsPage.tag.education': 'Utdanning',
-    'projectsPage.tag.cardgame': 'Kortspill',
-    'projectsPage.tag.strategy': 'Strategi',
+    'projectsPage.tag.marketplace': 'Markedsplass',
+    'projectsPage.tag.offline': 'Offline-først',
 
     // Contact
     'contact.heading': 'Kontakt',
@@ -93,6 +93,9 @@ const translations = {
 
     // Footer
     'footer.privacy': 'Personvernerklæring',
+
+    // Disclaimer
+    'disclaimer.text': 'Denne nettsiden er under utvikling. Innhold og design kan endres, og feil kan forekomme.',
 
     // Privacy Policy
     'privacy.title': 'Personvernerklæring',
@@ -190,8 +193,9 @@ const translations = {
     'projects.status.soon': 'Coming Soon',
     'projects.visitHomepage': 'Visit homepage →',
     'projects.fecht.desc': 'AI assistant for Historical European Martial Arts (HEMA).',
-    'projects.langapp.desc': 'Language learning app for effective and engaging language training.',
-    'projects.backstabber.desc': 'Card game and strategy game with unique mechanics.',
+    'projects.some.desc': 'Stop scrolling — talk to your social media instead. AI-powered assistant that summarizes your feeds.',
+    'projects.cardswap.desc': 'Find collectors nearby and trade cards locally. A marketplace for Pokémon and other TCGs.',
+    'projects.fieldlog.desc': 'Document fieldwork with your voice. Record, snap photos, and get AI-generated reports automatically.',
     'projects.seeAll': 'See all projects →',
 
     // Projects Page
@@ -199,22 +203,21 @@ const translations = {
     'projectsPage.meta.description': 'Explore all projects and products from Falck Studios — AI tools, apps, and creative digital solutions.',
     'projectsPage.kicker': 'Products & Projects',
     'projectsPage.title': 'What we\'re building',
-    'projectsPage.subtitle': 'From AI tools to creative games — here\'s everything we\'re working on.',
+    'projectsPage.subtitle': 'From AI tools to creative apps — here\'s everything we\'re working on.',
     'projectsPage.visitSite': 'Visit website ↗',
     'projectsPage.category.ai': 'AI',
     'projectsPage.category.app': 'App',
-    'projectsPage.category.game': 'Game',
     'projectsPage.fecht.desc': 'AI-powered learning platform for Historical European Martial Arts (HEMA). Explore terminology, techniques, and historical sources — with AI as your guide through the art of the sword.',
-    'projectsPage.langapp.desc': 'Language learning app that makes it easy and engaging to learn new languages. Built with a focus on effective repetition and practical language use.',
-    'projectsPage.backstabber.desc': 'Strategic card game with bluffing, alliances, and betrayal. Unique mechanics that reward social reading and tactical thinking.',
+    'projectsPage.some.desc': 'What if you could ask one AI what\'s happening on social media — instead of scrolling for hours? AI SoMe Wrapper summarizes your feeds across platforms, so you stay updated without losing time.',
+    'projectsPage.cardswap.desc': 'Collect Pokémon cards? CardSwap connects you with other collectors nearby for safe, face-to-face trades. Maps, chat, and reputation — everything you need to find the card you\'re looking for.',
+    'projectsPage.fieldlog.desc': 'For you who work in the field and need documentation without stopping. Speak what you\'re doing, snap a photo, and let AI generate the report. Works offline — syncs when you\'re back online.',
     'projectsPage.cta.heading': 'Got an idea?',
     'projectsPage.cta.text': 'We\'re always interested in new collaborations and exciting projects.',
     'projectsPage.cta.email': 'Send us an email →',
-    'projectsPage.tag.language': 'Language',
+    'projectsPage.tag.voice': 'Voice',
     'projectsPage.tag.mobile': 'Mobile',
-    'projectsPage.tag.education': 'Education',
-    'projectsPage.tag.cardgame': 'Card Game',
-    'projectsPage.tag.strategy': 'Strategy',
+    'projectsPage.tag.marketplace': 'Marketplace',
+    'projectsPage.tag.offline': 'Offline-first',
 
     // Contact
     'contact.heading': 'Contact',
@@ -228,6 +231,9 @@ const translations = {
 
     // Footer
     'footer.privacy': 'Privacy Policy',
+
+    // Disclaimer
+    'disclaimer.text': 'This website is under development. Content and design may change, and errors may occur.',
 
     // Privacy Policy
     'privacy.title': 'Privacy Policy',

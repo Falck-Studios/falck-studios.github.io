@@ -70,6 +70,15 @@
     </nav>
   </header>
 
+  <div class="site-disclaimer" role="status">
+    <div class="container">
+      <p class="site-disclaimer__text" data-i18n="disclaimer.text">
+        <svg class="site-disclaimer__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Denne nettsiden er under utvikling. Innhold og design kan endres, og feil kan forekomme.
+      </p>
+    </div>
+  </div>
+
   <main id="content">
     <!-- Page Header -->
     <section class="projects-hero">
@@ -115,21 +124,22 @@
 
           <div class="project-detail-card">
             <div class="project-detail-card__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="project-detail-card__content">
               <div class="project-detail-card__meta">
                 <span class="showcase-card__badge showcase-card__badge--wip" data-i18n="projects.badge.wip">Under utvikling</span>
-                <span class="showcase-card__category showcase-card__category--indigo" data-i18n="projectsPage.category.app">App</span>
+                <span class="showcase-card__category showcase-card__category--indigo">AI</span>
               </div>
-              <h3 class="project-detail-card__name">LangApp</h3>
-              <p class="project-detail-card__desc" data-i18n="projectsPage.langapp.desc">
-                Språklæringsapp som gjør det enkelt og engasjerende å lære nye språk. Bygget med fokus på effektiv repetisjon og praktisk språkbruk.
+              <h3 class="project-detail-card__name">AI SoMe Wrapper</h3>
+              <p class="project-detail-card__desc" data-i18n="projectsPage.some.desc">
+                Hva om du kunne spørre én AI hva som skjer i sosiale medier — i stedet for å scrolle i timevis? AI SoMe Wrapper oppsummerer feedene dine på tvers av plattformer, slik at du holder deg oppdatert uten å miste tid.
               </p>
               <div class="showcase-card__tags">
-                <span class="showcase-card__tag">Språk</span>
-                <span class="showcase-card__tag">Mobil</span>
-                <span class="showcase-card__tag">Utdanning</span>
+                <span class="showcase-card__tag">AI / LLM</span>
+                <span class="showcase-card__tag" data-i18n="projectsPage.tag.voice">Stemme</span>
+                <span class="showcase-card__tag">Social Media</span>
+                <span class="showcase-card__tag">Next.js</span>
               </div>
             </div>
             <span class="project-detail-card__status" data-i18n="projects.status.soon">Kommer snart</span>
@@ -137,21 +147,44 @@
 
           <div class="project-detail-card">
             <div class="project-detail-card__icon project-detail-card__icon--warm" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 10h8"/><path d="M8 14h4"/><path d="M2 18l5-5 3 3 4-4 8 8"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h2"/><path d="M15 8h2"/><path d="M7 12h10"/></svg>
             </div>
             <div class="project-detail-card__content">
               <div class="project-detail-card__meta">
                 <span class="showcase-card__badge showcase-card__badge--wip" data-i18n="projects.badge.wip">Under utvikling</span>
-                <span class="showcase-card__category showcase-card__category--warm" data-i18n="projectsPage.category.game">Spill</span>
+                <span class="showcase-card__category showcase-card__category--warm" data-i18n="projectsPage.category.app">App</span>
               </div>
-              <h3 class="project-detail-card__name">Backstabber</h3>
-              <p class="project-detail-card__desc" data-i18n="projectsPage.backstabber.desc">
-                Strategisk kortspill med bluffing, allianser og svik. Unike mekanikker som belønner sosial lesing og taktisk tenkning.
+              <h3 class="project-detail-card__name">CardSwap</h3>
+              <p class="project-detail-card__desc" data-i18n="projectsPage.cardswap.desc">
+                Samler du Pokémon-kort? CardSwap kobler deg med andre samlere i nærområdet for trygge bytter ansikt til ansikt. Kart, chat og omdømmesystem — alt du trenger for å finne akkurat det kortet du leter etter.
               </p>
               <div class="showcase-card__tags">
-                <span class="showcase-card__tag">Kortspill</span>
-                <span class="showcase-card__tag">Strategi</span>
-                <span class="showcase-card__tag">Multiplayer</span>
+                <span class="showcase-card__tag">TCG / Pokémon</span>
+                <span class="showcase-card__tag">React Native</span>
+                <span class="showcase-card__tag" data-i18n="projectsPage.tag.marketplace">Markedsplass</span>
+              </div>
+            </div>
+            <span class="project-detail-card__status" data-i18n="projects.status.soon">Kommer snart</span>
+          </div>
+
+          <div class="project-detail-card">
+            <div class="project-detail-card__icon project-detail-card__icon--teal" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </div>
+            <div class="project-detail-card__content">
+              <div class="project-detail-card__meta">
+                <span class="showcase-card__badge showcase-card__badge--wip" data-i18n="projects.badge.wip">Under utvikling</span>
+                <span class="showcase-card__category" data-i18n="projectsPage.category.app">App</span>
+              </div>
+              <h3 class="project-detail-card__name">FieldLog</h3>
+              <p class="project-detail-card__desc" data-i18n="projectsPage.fieldlog.desc">
+                For deg som jobber i felt og trenger dokumentasjon uten å stoppe opp. Snakk inn hva du gjør, knips et bilde, og la AI-en generere rapporten. Fungerer offline — synkroniserer når du er tilbake på nett.
+              </p>
+              <div class="showcase-card__tags">
+                <span class="showcase-card__tag">AI / Whisper</span>
+                <span class="showcase-card__tag" data-i18n="projectsPage.tag.voice">Stemme</span>
+                <span class="showcase-card__tag" data-i18n="projectsPage.tag.offline">Offline-først</span>
+                <span class="showcase-card__tag" data-i18n="projectsPage.tag.mobile">Mobil</span>
               </div>
             </div>
             <span class="project-detail-card__status" data-i18n="projects.status.soon">Kommer snart</span>

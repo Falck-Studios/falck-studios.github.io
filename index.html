@@ -91,6 +91,15 @@
     </nav>
   </header>
 
+  <div class="site-disclaimer" role="status">
+    <div class="container">
+      <p class="site-disclaimer__text" data-i18n="disclaimer.text">
+        <svg class="site-disclaimer__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Denne nettsiden er under utvikling. Innhold og design kan endres, og feil kan forekomme.
+      </p>
+    </div>
+  </div>
+
   <main>
     <section id="hero" class="hero">
       <div class="hero__orb hero__orb--1" aria-hidden="true"></div>
@@ -232,40 +241,59 @@
               </div>
             </a>
 
-            <!-- LangApp -->
+            <!-- AI SoMe Wrapper -->
             <div class="proj-card proj-card--side">
               <div class="proj-card__icon proj-card__icon--indigo" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </div>
               <div class="proj-card__meta">
                 <span class="proj-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
-                <span class="proj-card__cat proj-card__cat--indigo" data-i18n="projectsPage.category.app">App</span>
+                <span class="proj-card__cat proj-card__cat--indigo">AI</span>
               </div>
-              <h3 class="proj-card__name">LangApp</h3>
-              <p class="proj-card__desc" data-i18n="projects.langapp.desc">Språklæringsapp for effektiv og engasjerende språktrening.</p>
+              <h3 class="proj-card__name">AI SoMe Wrapper</h3>
+              <p class="proj-card__desc" data-i18n="projects.some.desc">Slutt å scrolle — snakk med sosiale medier i stedet. AI-drevet assistent som oppsummerer feedene dine.</p>
               <div class="proj-card__tags">
-                <span data-i18n="projectsPage.tag.language">Språk</span>
-                <span data-i18n="projectsPage.tag.mobile">Mobil</span>
-                <span data-i18n="projectsPage.tag.education">Utdanning</span>
+                <span>AI / LLM</span>
+                <span data-i18n="projectsPage.tag.voice">Stemme</span>
+                <span>Social Media</span>
               </div>
               <span class="proj-card__status" data-i18n="projects.status.soon">Kommer snart</span>
             </div>
 
-            <!-- Backstabber -->
+            <!-- CardSwap (TCG Trading App) -->
             <div class="proj-card proj-card--side">
               <div class="proj-card__icon proj-card__icon--warm" aria-hidden="true">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 8h2"/><path d="M15 8h2"/><path d="M7 12h10"/></svg>
               </div>
               <div class="proj-card__meta">
                 <span class="proj-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
-                <span class="proj-card__cat proj-card__cat--warm" data-i18n="projectsPage.category.game">Spill</span>
+                <span class="proj-card__cat proj-card__cat--warm" data-i18n="projectsPage.category.app">App</span>
               </div>
-              <h3 class="proj-card__name">Backstabber</h3>
-              <p class="proj-card__desc" data-i18n="projects.backstabber.desc">Kortspill og strategispill med unike mekanikker.</p>
+              <h3 class="proj-card__name">CardSwap</h3>
+              <p class="proj-card__desc" data-i18n="projects.cardswap.desc">Finn samlere i nærheten og bytt kort lokalt. Markedsplass for Pokémon og andre samlekortspill.</p>
               <div class="proj-card__tags">
-                <span data-i18n="projectsPage.tag.cardgame">Kortspill</span>
-                <span data-i18n="projectsPage.tag.strategy">Strategi</span>
-                <span>Multiplayer</span>
+                <span>TCG</span>
+                <span>React Native</span>
+                <span data-i18n="projectsPage.tag.marketplace">Markedsplass</span>
+              </div>
+              <span class="proj-card__status" data-i18n="projects.status.soon">Kommer snart</span>
+            </div>
+
+            <!-- FieldLog -->
+            <div class="proj-card proj-card--side">
+              <div class="proj-card__icon proj-card__icon--teal" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              </div>
+              <div class="proj-card__meta">
+                <span class="proj-card__badge" data-i18n="projects.badge.wip">Under utvikling</span>
+                <span class="proj-card__cat" data-i18n="projectsPage.category.app">App</span>
+              </div>
+              <h3 class="proj-card__name">FieldLog</h3>
+              <p class="proj-card__desc" data-i18n="projects.fieldlog.desc">Dokumenter feltarbeid med stemmen. Ta opp, ta bilder, og få AI-genererte rapporter automatisk.</p>
+              <div class="proj-card__tags">
+                <span>AI</span>
+                <span data-i18n="projectsPage.tag.voice">Stemme</span>
+                <span data-i18n="projectsPage.tag.mobile">Mobil</span>
               </div>
               <span class="proj-card__status" data-i18n="projects.status.soon">Kommer snart</span>
             </div>
