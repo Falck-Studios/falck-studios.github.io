@@ -952,6 +952,11 @@ main {
   border-radius: 100px;
 }
 
+.proj-card__badge--beta {
+  color: var(--color-accent-2);
+  background: var(--color-accent-2-glow);
+}
+
 .proj-card__cat {
   font-size: 0.6rem;
   font-weight: 600;
@@ -1600,6 +1605,11 @@ main {
 .showcase-card__badge--wip {
   color: var(--color-accent);
   background: var(--color-accent-glow);
+}
+
+.showcase-card__badge--beta {
+  color: var(--color-accent-2);
+  background: var(--color-accent-2-glow);
 }
 
 .showcase-card__category {
